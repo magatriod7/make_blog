@@ -36,6 +36,8 @@ let sequelize = new Sequelize(
         console.log('Unable to connect to the database: ', err);
     });
 
+    //여기까지는 리액트 기본 인용구 sequalizer
+
     db.Teacher = require('./teacher')(sequelize, Sequelize);
     db.Class = require('./class')(sequelize, Sequelize);
 
@@ -43,13 +45,11 @@ let sequelize = new Sequelize(
     //db.Teacher.hasOne(db.Class);
 
     //1:m 관계
-
+  /*
     db.Teacher.hasMany(db.Class, {
       foreignKey: 'teacher_id',
       sourceKey : 'id'
   });
-// 1 : m 관계
-/*
     db.Teacher.belongsToMany(db.Class, {
     through : 'scedule',
     foreignKey : 'teacher_id'
@@ -61,10 +61,10 @@ db.Class.belongsToMany(db.Teacher, {
     through : 'scedule',
     foreignKey: 'class_id',
 }); 
-  db.Class.belongsTo(db.Teacher, {
+db.Class.belongsTo(db.Teacher, {
       foreignKey: 'teacher_id',
       targetKey : 'id'
-  });
+});
 
 db.secret = '(9*)5$&!3%^0%^@@2$1!#5@2!4';
 module.exports = db;
