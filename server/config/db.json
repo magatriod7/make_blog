@@ -1,0 +1,10 @@
+{
+    "development" : {
+        "username": "maze",
+        "password": "19930821",
+        "database": "maze_database",
+        "host": "maze-db-instance-identifier.cpzr8qj5gy86.us-west-2.rds.amazonaws.com",
+        "port": "3306",
+        "dialect": "mysql"
+    }
+}
